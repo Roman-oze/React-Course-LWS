@@ -22,6 +22,7 @@ export default function Cards() {
 
   return (
     <>
+
       {cards.map((card, index) => (
 
         <div key={index} className="rounded-md shadow-md border border-gray-200 p-4">
@@ -31,7 +32,7 @@ export default function Cards() {
           <img
             src={card.image}
             alt={card.name}
-            className="w-full h-48 object-cover rounded-md mb-3"
+           
           />
 
           <p className="text-sky-600 mb-4">{card.description}</p>
@@ -42,6 +43,7 @@ export default function Cards() {
           
         </div>
       ))}
+      
     </>
   );
 }
