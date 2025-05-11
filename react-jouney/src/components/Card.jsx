@@ -1,49 +1,75 @@
-export default function Cards() {
+export default function Card() {
   const cards = [
     {
-      name: "Card 1",
+      id: 1,
+      name: "google",
       description: "This image card no:1",
       image:
-        "https://scontent.fdac99-1.fna.fbcdn.net/v/t45.1600-4/392787299_23862196860690316_3884763505948143472_n.jpg?stp=cp0_dst-jpg_p526x296_q75_spS444_tt6&_nc_cat=1&ccb=1-7&_nc_sid=b81fdb&_nc_ohc=DOk6I4cpXU8Q7kNvwGCIrVs&_nc_oc=AdnUSljvdKhBevf3WlPPNuB4htbgl_HCEgNNIx0unm6B8N0SSHbcauYBEdh1EdHJJ00&_nc_zt=1&_nc_ht=scontent.fdac99-1.fna&_nc_gid=C2KEwBZ2zFMi8eVR4Mg_KA&oh=00_AfKJRZl9GyXPexiP_LyaOT_mN34EGeX5T20GHLRyq9wENw&oe=6823D6CA",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEZolAKU-YfB53a7xm_-ezGrbs5r00qlHgrw&s",
+      alt: "product-image",
     },
     {
-      name: "Card 2",
+      id: 2,
+      name: "facebook",
       description: "This image card no:2",
       image:
-        "https://scontent.fdac99-1.fna.fbcdn.net/v/t45.1600-4/392787299_23862196860690316_3884763505948143472_n.jpg?stp=cp0_dst-jpg_p526x296_q75_spS444_tt6&_nc_cat=1&ccb=1-7&_nc_sid=b81fdb&_nc_ohc=DOk6I4cpXU8Q7kNvwGCIrVs&_nc_oc=AdnUSljvdKhBevf3WlPPNuB4htbgl_HCEgNNIx0unm6B8N0SSHbcauYBEdh1EdHJJ00&_nc_zt=1&_nc_ht=scontent.fdac99-1.fna&_nc_gid=C2KEwBZ2zFMi8eVR4Mg_KA&oh=00_AfKJRZl9GyXPexiP_LyaOT_mN34EGeX5T20GHLRyq9wENw&oe=6823D6CA",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAheSVv2m7Lubg_fvyth-cka6HqwOYc-Srjw&s",
+      alt: "product-image",
     },
     {
-      name: "Card 3",
+      id: 3,
+      name: "google",
       description: "This image card no:3",
       image:
-        "https://scontent.fdac99-1.fna.fbcdn.net/v/t45.1600-4/392787299_23862196860690316_3884763505948143472_n.jpg?stp=cp0_dst-jpg_p526x296_q75_spS444_tt6&_nc_cat=1&ccb=1-7&_nc_sid=b81fdb&_nc_ohc=DOk6I4cpXU8Q7kNvwGCIrVs&_nc_oc=AdnUSljvdKhBevf3WlPPNuB4htbgl_HCEgNNIx0unm6B8N0SSHbcauYBEdh1EdHJJ00&_nc_zt=1&_nc_ht=scontent.fdac99-1.fna&_nc_gid=C2KEwBZ2zFMi8eVR4Mg_KA&oh=00_AfKJRZl9GyXPexiP_LyaOT_mN34EGeX5T20GHLRyq9wENw&oe=6823D6CA",
+        "https://bifcol.com/wp-content/uploads/2017/10/image15.jpg",
+      alt: "product-image",
+      profession: "Web developer",
     },
   ];
 
+ 
+
   return (
     <>
+      {/* // Render this inside your component */}
+      
+      {cards.map((card) => (
+        <div key={card.id}>
+          <div className="rounded-2xl shadow-md border border-gray-200 p-5 bg-white hover:shadow-lg transition-shadow duration-300">
+            {/* Badge */}
+            <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full mb-4">
+              {card.name}
+            </span>
 
-      {cards.map((card, index) => (
+            {/* Image */}
+            <img src={card.image} alt={card.name} className=" rounded-lg" />
 
-        <div key={index} className="rounded-md shadow-md border border-gray-200 p-4">
+            {/* Description */}
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              {card.description}
+            </p>
 
-          <h1 className="font-bold text-lg mb-2">{card.name}</h1>
-
-          <img
-            src={card.image}
-            alt={card.name}
-           
-          />
-
-          <p className="text-sky-600 mb-4">{card.description}</p>
-
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            Read More..
-          </button>
-          
+            {/* Button */}
+            <button className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-semibold rounded-full shadow hover:from-blue-700 hover:to-blue-800 transition-transform transform hover:scale-105">
+              View Details
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       ))}
-      
     </>
   );
 }

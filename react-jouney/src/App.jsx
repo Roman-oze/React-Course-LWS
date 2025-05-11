@@ -10,6 +10,8 @@ import PropsAvatar from "./components/Avatar";
 import Roman from "./components/PropsAvatar";
 import ProfileFile from "./components/profile";
 import PackingList from "./components/Packing";
+import SmallCard from "./components/smallCard";
+import Guest from "./components/Radmon";
 
 const style1 = {
   backgroundColor: "yellow",
@@ -39,6 +41,8 @@ function CardDetail({ children }) {
   );
 }
 
+
+
 function App() {
   return (
     <>
@@ -53,11 +57,22 @@ function App() {
         </section>
       </div>
 
+      <div className="flex justify-center gap-1 mt-4">
+        <SmallCard/>
+      </div>
+      
       <div className="flex justify-center items-center gap-4 mt-4">
         {/* <Box />
         <Profile />
         <Gallery /> */}
         <Photo />
+      </div>
+
+
+      <div className="flex justify-center items-center gap-4 mt-4">
+       
+       <Guest/>
+
       </div>
 
       <div className="">
@@ -72,7 +87,24 @@ function App() {
         </CardDetail>
       </div>
 
+      <div className="flex justify-center items-center mt-8 gap-4">
+        <PersonInfo />
+      </div>
 
+      <div className="flex justify-center items-center mt-8 gap-4">
+        {/* people object from component folder into object file have all logic*/}
+        <People />
+      </div>
+
+      {/* Passing Props to a Component */}
+
+      <Roman person={{ name: "Lin Lanying", imageId: "1bX5QH6" }} size={100} />
+
+      {/* Profile file er Through te AVatar data fetch korlam */}
+      <ProfileFile>
+        {/* eta Children */}
+        <Avatar />
+      </ProfileFile>
 <br />
 <br />
 <br />

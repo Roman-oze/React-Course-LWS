@@ -1,16 +1,52 @@
-export default function Nav(){
-    return (
-        <>
-        <nav className="bg-white shadow-md" >
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">MyWebsite</h1>
-          <ul className="flex space-x-6 text-gray-700 font-medium">
-            <li className="hover:text-blue-600 cursor-pointer">Home</li>
-            <li className="hover:text-blue-600 cursor-pointer">About</li>
-            <li className="hover:text-blue-600 cursor-pointer">Contact</li>
-          </ul>
+export default function Nav() {
+  return (
+    <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        
+        {/* Logo & Name */}
+        <div className="flex items-center space-x-3">
+          <img
+            src="https://pbs.twimg.com/profile_images/720624118400479232/T1gdJBtt_400x400.jpg"
+            alt="Association Logo"
+            className="h-15 w-15 rounded-full object-cover"
+          />
+          <span className="text-2xl font-bold text-[rgb(85,158,217)] ">
+            Grameen Somiti
+          </span>
         </div>
-      </nav>
-        </>
-    );
+
+        {/* Navigation Links */}
+        <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
+          <li className="hover:text-blue-600 transition cursor-pointer">Home</li>
+          <li className="hover:text-blue-600 transition cursor-pointer">About Us</li>
+          <li className="hover:text-blue-600 transition cursor-pointer">Programs</li>
+          <li className="hover:text-blue-600 transition cursor-pointer">Events</li>
+          <li className="hover:text-blue-600 transition cursor-pointer">News</li>
+          <li className="hover:text-blue-600 transition cursor-pointer">Contact</li>
+        </ul>
+
+        {/* Call to Action */}
+        <div className="hidden md:block">
+          <button className="px-8 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-800 transition">
+            Join
+          </button>
+        </div>
+
+        {/* Mobile Menu Icon */}
+        <div className="md:hidden">
+          <button className="text-gray-700 hover:text-blue-600">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 }
