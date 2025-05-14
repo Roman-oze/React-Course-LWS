@@ -1,7 +1,7 @@
 
 export default function SmallCard(){
 
-      const people = [
+      const smallCard = [
     {
       id: 1,
       name: "Rumu",
@@ -29,7 +29,7 @@ export default function SmallCard(){
   ];
 
 
-   const person = people.filter((person) => person.name === "Rumu");
+   const person = smallCard.filter((person) => person.name === "Rumu");
 
   const Items =
     person.length > 0 ? (

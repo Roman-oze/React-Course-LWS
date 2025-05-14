@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header
-      className="relative bg-cover bg-center bg-no-repeat py-32 px-6 text-center text-white"
+      className="relative bg-cover bg-center bg-no-repeat py-32 px-6 text-center text-white mt-5"
       style={{
         backgroundImage:
           "url('https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-university-admissions-association-recruits-new-image_169447.jpg')",

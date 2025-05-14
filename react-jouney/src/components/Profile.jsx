@@ -13,7 +13,8 @@ export default function ProfileFile({children}) {
 
         <div>
             
-            <h1>{children}</h1>
+            <h1> Im, from children {children}</h1>
+            <p>Im your parents</p>
         </div>
         
     );

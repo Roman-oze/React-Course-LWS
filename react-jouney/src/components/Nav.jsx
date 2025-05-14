@@ -1,28 +1,26 @@
+import Avatar from "./Avatar";
+
 export default function Nav() {
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-gray-900 text-gray-200 top-0 z-50 fixed w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         
         {/* Logo & Name */}
         <div className="flex items-center space-x-3">
-          <img
-            src="https://pbs.twimg.com/profile_images/720624118400479232/T1gdJBtt_400x400.jpg"
-            alt="Association Logo"
-            className="h-15 w-15 rounded-full object-cover"
-          />
-          <span className="text-2xl font-bold text-[rgb(85,158,217)] ">
+         <Avatar />
+          <span className="text-2xl font-bold text-[rgb(229,235,239)] ">
             Grameen Somiti
           </span>
         </div>
 
         {/* Navigation Links */}
-        <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
-          <li className="hover:text-blue-600 transition cursor-pointer">Home</li>
-          <li className="hover:text-blue-600 transition cursor-pointer">About Us</li>
-          <li className="hover:text-blue-600 transition cursor-pointer">Programs</li>
-          <li className="hover:text-blue-600 transition cursor-pointer">Events</li>
-          <li className="hover:text-blue-600 transition cursor-pointer">News</li>
-          <li className="hover:text-blue-600 transition cursor-pointer">Contact</li>
+        <ul className="hidden md:flex space-x-8 text-gray-400 font-medium">
+          <li className="hover:text-blue-300 transition cursor-pointer ">Home</li>
+          <li className="hover:text-blue-300 transition cursor-pointer">About Us</li>
+          <li className="hover:text-blue-300 transition cursor-pointer">Programs</li>
+          <li className="hover:text-blue-300 transition cursor-pointer">Events</li>
+          <li className="hover:text-blue-300 transition cursor-pointer">News</li>
+          <li className="hover:text-blue-300 transition cursor-pointer">Contact</li>
         </ul>
 
         {/* Call to Action */}
@@ -34,7 +32,7 @@ export default function Nav() {
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden">
-          <button className="text-gray-700 hover:text-blue-600">
+          <button className="text-gray-700 hover:text-blue-300">
             <svg
               className="w-6 h-6"
               fill="none"

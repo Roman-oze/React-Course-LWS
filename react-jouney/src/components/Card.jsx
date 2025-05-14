@@ -1,3 +1,8 @@
+import service1  from  "../assets/image/coins-and-banknotes.webp"
+import service2  from  "../assets/image/card03.png"
+import service3  from  "../assets/image/card01.png"
+
+
 export default function Card() {
   const cards = [
     {
@@ -5,7 +10,7 @@ export default function Card() {
       name: "google",
       description: "This image card no:1",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEZolAKU-YfB53a7xm_-ezGrbs5r00qlHgrw&s",
+        service1,
       alt: "product-image",
     },
     {
@@ -13,7 +18,7 @@ export default function Card() {
       name: "facebook",
       description: "This image card no:2",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAheSVv2m7Lubg_fvyth-cka6HqwOYc-Srjw&s",
+        service2,
       alt: "product-image",
     },
     {
@@ -21,7 +26,7 @@ export default function Card() {
       name: "google",
       description: "This image card no:3",
       image:
-        "https://bifcol.com/wp-content/uploads/2017/10/image15.jpg",
+       service3,
       alt: "product-image",
       profession: "Web developer",
     },
@@ -45,10 +50,10 @@ export default function Card() {
             <img src={card.image} alt={card.name} className=" rounded-lg" />
 
             {/* Description */}
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+            {/* <p className="text-gray-600 text-sm leading-relaxed mb-6">
               {card.description}
-            </p>
-
+            </p> */}
+<br />
             {/* Button */}
             <button className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-semibold rounded-full shadow hover:from-blue-700 hover:to-blue-800 transition-transform transform hover:scale-105">
               View Details
