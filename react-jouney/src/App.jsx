@@ -1,87 +1,29 @@
-import Cards from "./components/Card";
-import Gallery, { CardBox as Box, Profile } from "./components/Gallery";
-import Header from "./components/Header";
-import PersonInfo from "./components/PersonInfo";
-import Photo from "./components/MakupTest";
-import Nav from "./components/nav";
-import People from "./components/Object";
-import Avatar from "./components/Avatar";
-import PropsAvatar from "./components/Avatar";
-import Roman from "./components/PropsAvatar";
-import ProfileFile from "./components/profile";
-import PackingList from "./components/Packing";
+import { useState } from "react";
+import AddTask from "./components/AddTask";
+import TaskList from "./components/TaskList";
+import { initialTasks } from "./data/tasks";
+import "./style.css";
 
-const style1 = {
-  backgroundColor: "yellow",
-};
-const style2 = {
-  backgroundColor: "blue",
-};
 
-const color = {
-  color: "blue",
-};
-
-let style = "";
-
-if (color === "yellow") {
-  style = style1;
-} else {
-  style = style2;
-}
-
-// card props children
-function CardDetail({ children }) {
-  return (
-    <div className="card">
-      <div className="content">{children}</div>
-    </div>
-  );
-}
-
-function App() {
+export default function App() {
+  const [tasks, setTasks] = useState(initialTasks);
   return (
     <>
-      <div className="font-sans">
-        {/* Navbar */}
-        <Nav />
-        {/* Hero / Cover Page */}
-        <Header />
-        {/* Three Cards Section */}
-        <section className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Cards />
-        </section>
-      </div>
+      <h1>Prague itinerary</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-gray-50 min-h-screen">
+  {/* Left Panel: Add Task */}
+  <div className="bg-white rounded-2xl shadow-md p-6">
+    <h2 className="text-xl font-semibold mb-4">Add New Task</h2>
+    <AddTask />
+  </div>
 
-      <div className="flex justify-center items-center gap-4 mt-4">
-        {/* <Box />
-        <Profile />
-        <Gallery /> */}
-        <Photo />
-      </div>
+  {/* Right Panel: Task List */}
+  <div className="bg-white rounded-2xl shadow-md p-6">
+    <h2 className="text-xl font-semibold mb-4">Task List</h2>
+    <TaskList tasks={tasks}/>
+  </div>
+</div>
 
-      <div className="">
-        <CardDetail>
-          <h1>Roman oze</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad quae
-            placeat perferendis necessitatibus corporis laboriosam rem, deserunt
-            culpa harum adipisci porro, ratione fugit quidem praesentium facilis
-            aliquam inventore minus ipsa?
-          </p>
-        </CardDetail>
-      </div>
-
-
-<br />
-<br />
-<br />
- <PackingList/>
-
-
-      <br />
     </>
   );
 }
-
-export default App;
