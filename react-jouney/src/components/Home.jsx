@@ -1,42 +1,31 @@
-import { useState } from "react";
+// import { useEffect, useState } from "react";
 
-export default function Task() {
-  const [edits, setEditing] = useState(false);
+export default function Homepage() {
+  // return (
+  //     <>
+  //     <div>
+  //         <input type="text"  className="border border-gray-500"/>
+  //         <button className="border border-gray-500 px-3 ">Add Task</button>
+  //     </div>
+  //     </>
+  // );
+//   const [time, setTime] = useState(new Date());
 
-  let content;
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setTime(new Date());
+//     }, 1000);
 
-  if (edits) {
-    content = (
-      <>
-        <input type="Text" className="border border-gray-400" />
-        <button
-          className="border border-green-400 px-2 rounded-sm"
-          onClick={() => setEditing(false)}
-        >
-          Save
-        </button>
-      </>
-    );
-  } else {
-    content = (
-      <>
-        <input type="Text" className="border border-gray-400" />
-        <button
-          className="border border-green-400 px-2 rounded-sm"
-          onClick={() => setEditing(true)}
-        >
-          Edit
-        </button>
-      </>
-    );
-  }
+//     return () => clearInterval(timer); // Cleanup on unmount
+//   }, []);
 
-  return (
-    <ul>
-      <input type="checkbox" className="border border-gray-400 text-xl" />
-      {/* <input type="Text" className="border border-gray-400"/> */}
-      {content}
-      <button className="border border-red-400 px-2 rounded-sm">Delete</button>
-    </ul>
-  );
+
+const dates = new Date();
+  dates.toISOString();
+
+  return <span className=" text-red">Live Time: {dates.toLocaleDateString()}</span>;
+
+
+
+  
 }
